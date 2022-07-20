@@ -1,0 +1,52 @@
+
+@host=http://localhost:3000
+
+@authorization=Bearer jbZZY6QX6K643pSpdv2udkk3beoQDs36pTi6M25XyUewNZ76SbkoKTBJ7gwO4nLnmLsyh9EM2oiuUku5WK9O8IcxxzJZHaU6oPphI6JzJgElQwmQSmaUgYy44yJYrfOw
+
+###
+GET {{host}}/health
+
+###
+POST {{host}}/auth/sign-up
+Content-Type: application/json
+
+{
+    "name": "julio",
+    "last_name": "torres",
+    "phone": "+573013819315",
+    "email": "jtorres990@gmail.com",
+    "password": "Pas5Word-01"
+}
+
+###
+POST {{host}}/auth/sign-in
+Content-Type: application/json
+
+{
+    "email": "jtorres990@gmail.com",
+    "password": "Pas5Word-01"
+}
+
+###
+GET http://localhost:3000/maps/restaurant?location=4.6857203,-74.0756886
+Authorization: {{authorization}}
+
+###
+GET http://localhost:3000/maps/restaurant?location=4.6857203,-74.0756886
+
+
+###
+GET http://localhost:3000/history
+Authorization: {{authorization}}
+
+###
+GET {{host}}/auth/session
+Authorization: {{authorization}}
+
+###
+DELETE {{host}}/auth/session
+
+###
+DELETE {{host}}/auth/session
+Authorization: {{authorization}}
+

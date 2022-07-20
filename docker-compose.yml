@@ -1,0 +1,21 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - logvolume01:/var/log
+    links:
+      - redis
+      - database
+
+  database:
+    image: 'postgres:latest'
+    env_file:
+      - .env
+
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
