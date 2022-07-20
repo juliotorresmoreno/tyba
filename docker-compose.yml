@@ -13,7 +13,7 @@ services:
   database:
     image: 'postgres:latest'
     env_file:
-      - .env
+      - .env.docker
 
   redis:
     image: redis
